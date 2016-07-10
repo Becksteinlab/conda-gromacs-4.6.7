@@ -16,13 +16,10 @@ cmake28 $buildpath/source/gromacs-$VERSION \
         -DCMAKE_INSTALL_PREFIX=$buildpath/versions/gromacs-$VERSION/gnu\
         -DGMX_BUILD_OWN_FFTW=ON -DGMX_PREFER_STATIC_LIBS=ON \
         -DGMX_GPU=OFF -DCMAKE_C_COMPILER=$CC \
-        -DCMAKE_GXX_COMPILER=$CXX
+        -DCMAKE_GXX_COMPILER=$CXX \
+        -DGMX_BUILD_SHARED_EXE=ON
 
 make install -j 4
 
+echo $(ls $buildpath/versions/gromacs-$VERSION/gnu)
 rm -rf $buildpath/versions/gromacs-$VERSION/gnu/{'include','lib64','share/man'}
-
-cd $buildpath/versions/gromacs-$VERSION/gnu/bin
-
-#TODO How to package the many binaries?
-
