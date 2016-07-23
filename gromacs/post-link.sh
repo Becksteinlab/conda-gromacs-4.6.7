@@ -22,7 +22,7 @@ INSTALL_SHARE=$INSTALL_DIR/share
 
 sed -i "s|.*GMXRC.bash.*|. $INSTALL_BIN/GMXRC.bash|" $INSTALL_BIN/GMXRC
 sed -i "s|.*GMXRC.csh.*|. $INSTALL_BIN/GMXRC.csh|" $INSTALL_BIN/GMXRC
-sed -i "s|.*GMXRC.zsh.*|source $INSTALL_BIN/GMXRC.zsh|" $INSTALL_DIR/GMXRC
+sed -i "s|.*GMXRC.zsh.*|source $INSTALL_BIN/GMXRC.zsh|" $INSTALL_BIN/GMXRC
 
 # BASH
 sed -i "s|GMXBIN=.*|GMXBIN=$INSTALL_DIR/bin|" $INSTALL_BIN/GMXRC.bash
